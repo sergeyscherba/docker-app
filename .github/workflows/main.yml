@@ -21,5 +21,5 @@ jobs:
             renovate-image: ghcr.io/renovatebot/renovate:41.0.16
             configurationFile: renovate-config.js
           env:
-            RENOVATE_ENDPOINT: "https://git.hub.vwgroup.com/api/v3"
+           # RENOVATE_ENDPOINT: "https://git.hub.vwgroup.com/api/v3"
             LOG_LEVEL: 'debug'
