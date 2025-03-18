@@ -1,0 +1,23 @@
+name: SSH Manual script test
+run-name: Manual check
+on: 
+  workflow_dispatch:
+jobs:
+    check:
+      runs-on: auto-buildah-base
+      env:
+        TECH_USER_PAT: ${{ secrets.COLUMBUS_DATA_PLATFORM_GITHUB_API_TOKEN }}
+        GITHUB_HOSTNAME: "git.hub.vwgroup.com"
+        GITHUB_ISSUE_NUMBER: 242
+      permissions:
+        id-token: write
+        contents: read
+      steps:
+        - uses: actions/checkout@v4
+        - name: Self-hosted Renovate
+          uses: crenovatebot/github-action@v41.0.16
+          with:
+            token: ${{ secrets.RENOVATE_TOKEN }}
+            renovate-image: ghcr.io/renovatebot/renovate:41.0.16
+          env:
+            RENOVATE_ENDPOINT: "https://git.hub.vwgroup.com/api/v3"
