@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 jobs:
     check:
-      runs-on: auto-buildah-base
+      runs-on: ubuntu-latest
       env:
         TECH_USER_PAT: ${{ secrets.COLUMBUS_DATA_PLATFORM_GITHUB_API_TOKEN }}
         GITHUB_HOSTNAME: "git.hub.vwgroup.com"
