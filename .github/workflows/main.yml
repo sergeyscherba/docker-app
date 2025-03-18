@@ -19,7 +19,7 @@ jobs:
           with:
             token: ${{ secrets.RENOVATE_TOKEN }}
             renovate-image: ghcr.io/renovatebot/renovate:41.0.16
-            configurationFile: renovate-config.js
+            configurationFile: renovate.json
           env:
            # RENOVATE_ENDPOINT: "https://git.hub.vwgroup.com/api/v3"
             LOG_LEVEL: 'debug'
